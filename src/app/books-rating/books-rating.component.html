@@ -1,0 +1,26 @@
+<div>
+  <h2>{{ currentBook.title }}</h2>
+  <p>{{ currentBook.description }}</p>
+  <p>Authors: {{ currentBook.authors }}</p>
+  <p>Rating: {{ currentBook.rating }}</p>
+
+  <hr />
+
+  <div>
+    @for (item of [1, 2, 3, 4, 5]; track $index) {
+    <button (click)="rateBook(item)">Star {{ item }}</button>
+    }
+
+    <button (click)="nextBook()">Next Book</button>
+    <button (click)="reset()">Restart</button>
+    <button (click)="stopRating()">Stop Rating</button>
+  </div>
+</div>
+
+<div>
+  <input type="text" [(ngModel)]="title" placeholder="Title" />
+
+  <textarea [(ngModel)]="description" placeholder="Description"></textarea>
+
+  <input type="text" [(ngModel)]="authors" placeholder="Authors" />
+</div>
